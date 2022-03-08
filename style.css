@@ -1,0 +1,188 @@
+
+
+/* styles.css */
+/* universal selector - Applies to whole document */
+/* To center everything in game */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #434343;
+    background-size:50px 50px;
+    background-image:linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+  }
+.game{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 10px rgba(41, 39, 39, 0.363);
+    border-style:groove;
+    background-image: linear-gradient(#726786, #484adb, rgba(0, 0, 0, 0.6));
+    box-shadow: 6px 8px 9px 5px rgba(0, 0, 0, 0.342);
+    margin-bottom: 100px;
+    margin-top: 100px;
+
+}
+ 
+/* Title of the game */
+.title{
+    top: 0;
+    font-size: 4rem;
+    z-index: 2;
+    color: white;
+    font-family: chochin;
+    text-shadow: 3px 3px 3px black;
+}
+ 
+/* Score Board */
+.score{
+    display: grid;
+    grid-auto-flow: column;
+    width: 30vw;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+.screen {
+    height:fit-content;
+    line-height: 60px;
+    padding: 15px 11px;
+    background-image: linear-gradient( rgba(147, 219, 138, 0.6), #d4cf88,#fafafa);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px #04050c;
+}
+ 
+/* Score  */
+.p-count {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: #726786;
+
+}
+
+.c-count{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: #726786;
+}
+ 
+/* displaying three buttons in one line */
+.options{
+    display: flex;
+    width: 50vw;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    color: white;
+}
+ 
+/* Styling on all three buttons */
+.rock, .paper, .scissor{
+    padding: 0.8rem;
+    width: 100px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+    background-image: linear-gradient(#6f42c2, #8d182a);
+    box-shadow: 2px 4px 6px #2f080e;
+    text-shadow: 2px 3px 9px black;
+    color:white;
+}
+
+.rock:hover,.paper:hover,.scissor:hover {
+    transition: 0.5s ease-in-out;
+    border-radius: 35px;
+    background-image: linear-gradient(#18222480, #aa646e);
+}
+ 
+.move{
+    margin-top:30px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.movesleft{
+    margin-top:10px;
+    color: white;
+}
+ 
+/* Reload button style */
+.reload {
+    display: none;
+    padding: 0.8rem;
+    width: 100px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+    background-image: linear-gradient(#6f42c2, #8d182a);
+    box-shadow: 2px 4px 6px #2f080e;
+    text-shadow: 2px 3px 9px black;
+    color:white;
+}
+
+.mini-screen {
+    display:grid;
+    background-image: linear-gradient(#c2e4df, #685053);
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: inset;
+
+    
+}
+ 
+.result{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: white;
+}
+ 
+/* Responsive Design */
+@media screen and (max-width: 612px)
+{ 
+    .title{
+        text-align: center;
+    }
+    .score{
+        top: 200px;
+        width: 100vw;
+    }
+    .options{
+        width: 100vw;
+    }
+}
+
+   .container {
+        max-width: 1500px;
+        height: fit-content;
+        margin:20vh auto 0 auto;
+        margin-bottom: 200px;
+        border-radius: 10px;
+        border: solid 5px rgba(41, 39, 39, 0.363);
+        background-image: linear-gradient(#726786, #91919e, rgba(0, 0, 0, 0.6));
+        box-shadow: 20px 16px 18px 10px rgba(34, 28, 28, 0.342);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer {
+        color: white;
+        text-align: center;
+        margin-top: 70px;
+        font-size: 30px;
+        font-family: Segoe Print;
+        text-shadow: 8px 3px 9px black;
+    
+    }
