@@ -1,8 +1,4 @@
 
-
-/* styles.css */
-/* universal selector - Applies to whole document */
-/* To center everything in game */
 body {
     margin: 0;
     padding: 0;
@@ -119,6 +115,7 @@ body {
     display: none;
     padding: 0.8rem;
     width: 100px;
+    margin: 2.5%;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -185,4 +182,16 @@ body {
         font-family: Segoe Print;
         text-shadow: 8px 3px 9px black;
     
+    }
+
+    .green-glow {
+        box-shadow: 5px 6px 30px rgb(0, 255, 0);
+    }
+
+    .red-glow {
+        box-shadow: 5px 6px 30px rgb(253, 2, 2);
+    }
+
+    .blue-glow {
+        box-shadow: 5px 6px 30px rgb(0, 38, 253);
     }
