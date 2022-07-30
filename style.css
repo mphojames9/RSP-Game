@@ -70,8 +70,9 @@ body {
 /* displaying three buttons in one line */
 .options{
     display: flex;
-    width: 50vw;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
     margin-top: 2rem;
     color: white;
 }
@@ -132,9 +133,11 @@ body {
     background-image: linear-gradient(#c2e4df, #685053);
     padding: 20px;
     width: 100px;
-    text-align: center;
     border-radius: 10px;
     border-style: inset;
+    text-align: center;
+    justify-content: center;
+    
 
     
 }
@@ -143,22 +146,96 @@ body {
     margin-top: 20px;
     font-size: 1.2rem;
     color: white;
+    text-align: center;
+    justify-content: center;
+
 }
  
 /* Responsive Design */
-@media screen and (max-width: 612px)
+@media screen and (max-width: 1001px)
 { 
     .title{
         text-align: center;
+        font-size: 3em;
     }
     .score{
         top: 200px;
-        width: 100vw;
+        width: 95%;
     }
     .options{
-        width: 100vw;
+        width: 95%;
     }
 }
+
+@media screen and (max-width: 530px)
+{ 
+    .game {
+        width: 95%;
+    }
+
+    .screen {
+        width: 85%;
+    }
+
+    .mini-screen {
+        width:75px;
+    }
+
+    .title{
+        font-size: 2em;
+    }
+
+    .computerScore h2 {
+        font-size: 1em;
+    }
+
+    .playerScore h2 {
+        font-size: 1em;
+    }
+
+    .move {
+        font-size: 1.4em;
+    }
+
+    .rock, .paper, .scissor{
+        padding: 0.5rem;
+        width: 75px;
+        border-radius: 35px;
+        font-size: 11px;
+    }
+
+    .reload {
+        display: none;
+        padding: 0.5rem;
+        width: 75px;
+        margin: 2.5%;
+        border-radius: 35px;
+        font-size: 11px;
+
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+
+    .screen {
+        width: 90%;
+    }
+
+    .mini-screen {
+        width:55px;
+    }
+
+    .c-count {
+        font-size: 1.25em;
+    }
+
+    .p-count {
+        font-size: 1.25em;
+    }
+}
+
+
 
    .container {
         max-width: 1500px;
