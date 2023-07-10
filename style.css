@@ -150,5 +150,13 @@ section {
     margin: .25em;
 }
 
+@media (max-width:400px){
+    .game {
+        width: 90%;
+        margin: 0 auto;
+    }
 
-
+    .roundCounter {
+        margin: 1em;
+    }
+}
