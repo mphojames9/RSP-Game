@@ -111,6 +111,7 @@ section {
 }
 
 .computerChoice {
+    background-image: url(img/loading.gif);
     background-size: 100% 100%;
 }
 
@@ -137,7 +138,7 @@ section {
     text-align: center;
     width: 95;
     color: var(--clr-light);
-    border-bottom: 2.5px var(--clr-light) solid;
+    border-bottom: 5px var(--clr-light) solid;
     border-bottom-left-radius: 60%;
     border-bottom-right-radius: 60%;
 
@@ -157,9 +158,6 @@ section {
     font-weight: bold;
 }
 
-.backGroundImg {
-    background-image: none;
-}
 @media (max-width:400px){
     .game {
         width: 90%;
