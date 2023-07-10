@@ -1,274 +1,154 @@
-
-body {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    background-color: #434343;
-    background-size:50px 50px;
-    background-image:linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
-  }
-.game{
+    box-sizing: border-box;
+}
+
+:root {
+    --fs-h1: 1.8em;
+    --fs-h3: 1em;
+    --clr-light: rgb(245, 241, 241);
+} 
+
+@media (min-width:800px){
+    :root {
+        --fs-h1: 3em;
+        --fs-h3: 1.2em;
+    }
+
+    .gameSection {
+        display: flex;
+    }
+
+    .gameSection-player, .gameSection-computer {
+        width: 50%;
+    }
+}
+
+body {
+    background: linear-gradient(217deg, rgba(0, 153, 255, 0.8), rgba(0, 255, 255, 0) 70.71%),
+                linear-gradient(127deg, rgba(0, 255, 128, 0.8), rgba(0, 255, 234, 0) 70.71%),
+                linear-gradient(336deg, rgba(0, 255, 255, 0.8), rgba(0,0,255,0) 70.71%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+.game {
+    max-width: 150vh;
+    width: 90%;
+    height: fit-content;
+    margin: 2em auto;
     display: flex;
     flex-direction: column;
-    height: 600px;
-    width: 70%;
-    justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    border: solid 10px rgba(41, 39, 39, 0.363);
-    border-style:groove;
-    background-image: linear-gradient(#726786, #484adb, rgba(0, 0, 0, 0.6));
-    box-shadow: 6px 8px 9px 5px rgba(0, 0, 0, 0.342);
-    margin-bottom: 100px;
-    margin-top: 100px;
-
-}
- 
-/* Title of the game */
-.title{
-    top: 0;
-    font-size: 4rem;
-    z-index: 2;
-    color: white;
-    font-family: chochin;
-    text-shadow: 3px 3px 3px black;
-}
- 
-/* Score Board */
-.score{
-    display: grid;
-    grid-auto-flow: column;
-    width: 30vw;
-    justify-content: space-evenly;
-    z-index: 1;
-}
-.screen {
-    height:fit-content;
-    line-height: 60px;
-    padding: 15px 11px;
-    background-image: linear-gradient( rgba(147, 219, 138, 0.6), #d4cf88,#fafafa);
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px #04050c;
-}
- 
-/* Score  */
-.p-count {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 1rem;
-    color: #726786;
-
 }
 
-.c-count{
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 1rem;
-    color: #726786;
-}
- 
-/* displaying three buttons in one line */
-.options{
+.roundCounter {
     display: flex;
+    margin: 2em;
+}
+
+.roundCounter .text {
+    margin-right: 0.5rem;
+}
+
+.roundCounter h1 {
+    font-size: var(--fs-h1);
+    color: var(--clr-light);
+}
+
+.gameSection {
     width: 100%;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 2rem;
-    color: white;
+    height: fit-content;
 }
- 
-/* Styling on all three buttons */
-.rock, .paper, .scissor{
-    padding: 0.8rem;
-    width: 100px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
+
+.gameSection-player, .gameSection-computer {
+    width: 100%;
+    height: fit-content;
+}
+
+.scores {
+    margin-bottom: 1.5em ;
+    width: 100%;
+    height: fit-content;
+    color: var(--clr-light);
+}
+
+.playerScore, .computerScore {
+    text-align: center;
+    font-size: var(--fs-h3);
+}
+
+.playerScoreText, .computerScoreText {
+    padding: 0.6rem;
+    font-size: var(--fs-h3);
+}
+
+.buttonSection, .computerSelection{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonSection .button, .computerChoice {
+    max-width: 100px;
+    width: 35%;
+    margin: 1rem;
+    height: 100px;
     cursor: pointer;
-    border-radius: 35px;
-    background-image: linear-gradient(#6f42c2, #8d182a);
-    box-shadow: 2px 4px 6px #2f080e;
-    text-shadow: 2px 3px 9px black;
-    color:white;
+    transition: ease-in-out 250ms;
 }
 
-.rock:hover,.paper:hover,.scissor:hover {
-    transition: 0.5s ease-in-out;
-    border-radius: 35px;
-    background-image: linear-gradient(#18222480, #aa646e);
+.computerChoice {
+    background-image: url(img/sissor.png);
+    background-size: 100% 100%;
 }
- 
-.move{
-    margin-top:30px;
-    font-size: 2rem;
-    font-weight: bold;
+
+.buttonSection .button:hover {
+    transform: scale(1.05);
+}
+
+#rock {
+    background-image: url(img/rock.png);
+    background-size: 100% 100%;
+}
+
+#paper {
+    background-image: url(img/paper.png);
+    background-size: 100% 100%;
+}
+
+#sissor {
+    background-image: url(img/sissor.png);
+    background-size: 100% 100%;
+}
+
+.selectionText {
     text-align: center;
-    color: white;
-}
-
-.movesleft{
-    margin-top:10px;
-    color: white;
-}
- 
-/* Reload button style */
-.reload {
-    display: none;
-    padding: 0.8rem;
-    width: 100px;
-    margin: 2.5%;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 35px;
-    background-image: linear-gradient(#6f42c2, #8d182a);
-    box-shadow: 2px 4px 6px #2f080e;
-    text-shadow: 2px 3px 9px black;
-    color:white;
-}
-
-.mini-screen {
-    display:grid;
-    background-image: linear-gradient(#c2e4df, #685053);
-    padding: 20px;
-    width: 100px;
-    border-radius: 10px;
-    border-style: inset;
-    text-align: center;
-    justify-content: center;
-    
-
-    
-}
- 
-.result{
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: white;
-    text-align: center;
-    justify-content: center;
+    width: 95;
+    color: var(--clr-light);
+    border-bottom: 2.5px var(--clr-light) solid;
+    border-bottom-left-radius: 60%;
+    border-bottom-right-radius: 60%;
 
 }
- 
-/* Responsive Design */
-@media screen and (max-width: 1001px)
-{ 
-    .title{
-        text-align: center;
-        font-size: 3em;
-    }
-    .score{
-        top: 200px;
-        width: 95%;
-    }
-    .options{
-        width: 95%;
-    }
+
+.selectionText p {
+    padding: .25rem ;
 }
 
-@media screen and (max-width: 530px)
-{ 
-    .game {
-        width: 95%;
-    }
-
-    .screen {
-        width: 85%;
-    }
-
-    .mini-screen {
-        width:75px;
-    }
-
-    .title{
-        font-size: 2em;
-    }
-
-    .computerScore h2 {
-        font-size: 1em;
-    }
-
-    .playerScore h2 {
-        font-size: 1em;
-    }
-
-    .move {
-        font-size: 1.4em;
-    }
-
-    .rock, .paper, .scissor{
-        padding: 0.5rem;
-        width: 75px;
-        border-radius: 35px;
-        font-size: 11px;
-    }
-
-    .reload {
-        display: none;
-        padding: 0.5rem;
-        width: 75px;
-        margin: 2.5%;
-        border-radius: 35px;
-        font-size: 11px;
-
-    }
-}
-
-@media screen and (max-width: 300px)
-{
-
-    .screen {
-        width: 90%;
-    }
-
-    .mini-screen {
-        width:55px;
-    }
-
-    .c-count {
-        font-size: 1.25em;
-    }
-
-    .p-count {
-        font-size: 1.25em;
-    }
+.temporaryResults {
+    color: var(--clr-light);
+    margin: .25em;
 }
 
 
 
-   .container {
-        max-width: 1500px;
-        height: fit-content;
-        margin:20vh auto 0 auto;
-        margin-bottom: 200px;
-        border-radius: 10px;
-        border: solid 5px rgba(41, 39, 39, 0.363);
-        background-image: linear-gradient(#726786, #91919e, rgba(0, 0, 0, 0.6));
-        box-shadow: 20px 16px 18px 10px rgba(34, 28, 28, 0.342);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    footer {
-        color: white;
-        text-align: center;
-        margin-top: 70px;
-        font-size: 30px;
-        font-family: Segoe Print;
-        text-shadow: 8px 3px 9px black;
-    
-    }
-
-    .green-glow {
-        box-shadow: 5px 6px 30px rgb(0, 255, 0);
-    }
-
-    .red-glow {
-        box-shadow: 5px 6px 30px rgb(253, 2, 2);
-    }
-
-    .blue-glow {
-        box-shadow: 5px 6px 30px rgb(0, 38, 253);
-    }
