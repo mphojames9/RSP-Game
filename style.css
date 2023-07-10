@@ -157,6 +157,15 @@ section {
     }
 
     .roundCounter {
-        margin: 1em;
+        margin: .5em;
     }
+
+    .scores {
+        margin-bottom: 0 ;
+    }
+
+    .buttonSection .button, .computerChoice {
+        margin-top: 0;
+    }
+    
 }
