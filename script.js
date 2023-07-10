@@ -102,7 +102,7 @@ function displayElements(){
     rockBtn.style="background-image: (img/rock.png)";
     paperBtn.style="background-image: (img/paper.png)";
     sissorBtn.style="background-image: (img/sissor.png)";
-    computerChoice_backGround.style = "background-image: none";
+    computerChoice_backGround.style="background-image: url(img/loading.gif)";
     }
     setTimeout(test,1500);
     setTimeout(restoreBackImg,1500);
