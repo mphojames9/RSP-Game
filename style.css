@@ -92,6 +92,10 @@ section {
     font-size: var(--fs-h3);
 }
 
+.checked {
+    color: orange;
+  }
+
 .buttonSection, .computerSelection{
     width: 100%;
     height: fit-content;
