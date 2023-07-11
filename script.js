@@ -86,7 +86,6 @@ function main(playerSelection){
         tie();
     }
     scoreUpdate();
-    moves++
 }
 function win(){
     playerScore++;
@@ -142,7 +141,12 @@ function scoreUpdate(){
     };
 
     if(playerScore === 3 || computerScore === 3){
-        gameOver();
+        setTimeout(gameOver,1900);
+    }
+    if(playerScore <= 3 && computerScore <= 3){
+        moves++
+    }else{
+        return;
     }
 }
 
@@ -150,9 +154,9 @@ function gameOver(){
     gameOverSec.style.display = "flex";
 
     if(playerScore > computerScore){
-        winnerSec.innerHTML = "You win";
+        winnerSec.innerHTML = "You won the game";
     }else{
-        winnerSec.innerHTML = "You loss";
+        winnerSec.innerHTML = "You lost the game";
     }
     playerScore_display.innerHTML = playerScore;
     computerScore_display.innerHTML = computerScore;
@@ -179,4 +183,5 @@ function gameOver(){
     homeBtn.addEventListener("click", ()=>{
         location.reload();
     })
+    
 }
