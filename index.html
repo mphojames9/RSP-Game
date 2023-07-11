@@ -15,7 +15,7 @@
             <div class="header">
                 <div class="roundCounter">
                     <h1 class="text">Round</h1>
-                    <h1 class="roundCounter-span"></h1>
+                    <h1 class="roundCounter-span">1</h1>
                 </div>
             </div>
             <div class="gameSection">
@@ -24,11 +24,9 @@
                         <div class="playerScore">
                             <h3 class="playerScoreText">Player Score</h3>
                             <h3 class="playerScoreCounter">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
+                                <span id="ps1" class="fa fa-star"></span>
+                                <span id="ps2" class="fa fa-star"></span>
+                                <span id="ps3" class="fa fa-star"></span>
                             </h3>
                         </div>
                     </div>
@@ -45,11 +43,10 @@
                     <div class="scores">
                         <div class="computerScore">
                             <h3 class="computerScoreText">Computer Score</h3>
-                            <h3 class="computerScoreCounter">                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span></h3>
+                            <h3 class="computerScoreCounter">
+                                <span id="cs1" class="fa fa-star"></span>
+                                <span id="cs2" class="fa fa-star"></span>
+                                <span id="cs3"class="fa fa-star"></span>
                         </div>
                     </div>
                     <div class="computerSelection">
@@ -62,6 +59,42 @@
             </div>
             <div class="temporaryResults">
                 <h2 id="tempResults"></h2>
+            </div>
+        </div>
+        <div class="startDiv">
+            <h1>Rock Papar Sissors</h1>
+            <div class="imageContainer">
+                <img src="img/rock.png" max-width="70px" height="80px">
+                <img src="img/paper.png" max-width="70px"height="80px">
+                <img src="img/sissor.png" max-width="70px" height="80px">
+            </div>
+            <div class="textDiv">
+                <div class="textDiv_1">
+                    <p id="intro_header">Do you have a dispute with your computer?</p><br/>
+                    <p>Resolve it now!</p>
+                </div>
+                <div class="textDiv_2">
+                    <p id="intro_header_2">Press "Get Started" to play with a computer.</p>
+                </div>
+            </div>
+            <button id="startBtn">Get Started</button>
+        </div>
+        <div class="gameOverSec">
+            <h1 id="gameResults"></h1>
+            <div class="finalScore">
+                <div class="pScore"></div>
+                <span>:</span>
+                <div class="cScore"></div>
+            </div>
+            <button id="playAgain">Play Again</button>
+            <button id="home">Home page</button>
+            <div class="sociaMediaButtons">
+                <button id="linkedin" class="fa fa-linkedin">
+                    <a href="#">linkedin</a>
+                </button>
+                <button id="twitter" class="fa fa-twitter">
+                    <a href="#">twitter</a>
+                </button>
             </div>
         </div>
     </section>

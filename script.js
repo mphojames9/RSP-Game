@@ -1,21 +1,37 @@
 let playerScore = 0;
 let computerScore = 0;
-let moves = 1;
-const playerScore_display = document.querySelector(".playerScoreCounter");
+let moves = 2;
+const playerScore_display = document.querySelector(".pScore");
 const results = document.querySelector(".temporaryResults");
 const rounds = document.querySelector(".roundCounter-span");
 const computerChoice_backGround = document.querySelector(".computerChoice");
-const computerScore_display = document.querySelector(".computerScoreCounter");
+const computerScore_display = document.querySelector(".cScore");
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const sissorBtn = document.querySelector("#sissor");
+const startBtn = document.querySelector("#startBtn");
+const mainGame = document.querySelector(".game");
+const startPage = document.querySelector(".startDiv");
+const playerScoreStar_1 = document.getElementById("ps1");
+const playerScoreStar_2 = document.getElementById("ps2");
+const playerScoreStar_3 = document.getElementById("ps3");
+const computerScoreStar_1 = document.getElementById("cs1");
+const computerScoreStar_2 = document.getElementById("cs2");
+const computerScoreStar_3 = document.getElementById("cs3");
+const gameOverSec = document.querySelector(".gameOverSec");
+const winnerSec = document.querySelector("#gameResults");
+const playAgainBtn = document.querySelector("#playAgain");
+const homeBtn = document.querySelector("#home");
+
+startBtn.addEventListener("click",()=>{
+    mainGame.style.display = "flex";
+    startPage.style.display = "none";
+})
 
 rockBtn.addEventListener("click",()=>{
     main('rock');
     paperBtn.style="background-image: none";
     sissorBtn.style="background-image: none";
-
-
 })
 
 paperBtn.addEventListener("click",()=>{
@@ -66,14 +82,11 @@ function main(playerSelection){
         computerChoice_backGround.style = "background-image: url(img/sissor.png)";
         tie();
     }
-    if(rounds.innerHTML === "5"){
-        console.log("game over")
-    }
+    scoreUpdate();
     moves++
 }
 function win(){
     playerScore++;
-    playerScore_display.innerHTML = playerScore;
     results.innerHTML = "You win";
     rounds.innerHTML = `${moves}`;
     displayElements();
@@ -81,7 +94,6 @@ function win(){
 }
 function loss(){
     computerScore++;
-    computerScore_display.innerHTML = computerScore;
     results.innerHTML = "You lose";
     rounds.innerHTML = `${moves}`;
     displayElements();
@@ -108,3 +120,59 @@ function displayElements(){
     setTimeout(restoreBackImg,1500);
 }
 
+function scoreUpdate(){
+    if(playerScore === 1){
+        playerScoreStar_1.classList.add("checked");
+    }else if(playerScore === 2){
+          playerScoreStar_2.classList.add("checked");
+    }else if(playerScore === 3){
+          playerScoreStar_3.classList.add("checked");
+};
+
+    if(computerScore === 1){
+            computerScoreStar_1.classList.add("checked");
+    }else if(computerScore === 2){
+        computerScoreStar_2.classList.add("checked");
+    }else if(computerScore === 3){
+        computerScoreStar_3.classList.add("checked");
+    };
+
+    if(playerScore === 3 || computerScore === 3){
+        gameOver();
+    }
+}
+
+function gameOver(){
+    gameOverSec.style.display = "flex";
+
+    if(playerScore > computerScore){
+        winnerSec.innerHTML = "You win";
+    }else{
+        winnerSec.innerHTML = "You loss";
+    }
+    playerScore_display.innerHTML = playerScore;
+    computerScore_display.innerHTML = computerScore;
+    mainGame.classList.add("opacity");
+
+    playAgainBtn.addEventListener("click",()=>{
+        gameOverSec.style.display = "none";
+
+        playerScore = 0;
+        computerScore = 0;
+        moves = 2;
+        rounds.innerHTML = "1";
+        playerScoreStar_1.classList.remove("checked");
+        playerScoreStar_2.classList.remove("checked");
+        playerScoreStar_3.classList.remove("checked");
+
+        computerScoreStar_1.classList.remove("checked");
+        computerScoreStar_2.classList.remove("checked");
+        computerScoreStar_3.classList.remove("checked");
+
+        mainGame.classList.remove("opacity");
+
+    })
+    homeBtn.addEventListener("click", ()=>{
+        location.reload();
+    })
+}

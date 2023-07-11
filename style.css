@@ -8,6 +8,9 @@
     --fs-h1: 1.8em;
     --fs-h3: 1em;
     --clr-light: rgb(245, 241, 241);
+    --bg-img: linear-gradient(217deg, rgba(12, 59, 90, 0.8), rgba(0, 255, 255, 0) 70.71%),
+    linear-gradient(127deg, rgba(27, 105, 66, 0.8), rgba(0, 255, 234, 0) 70.71%),
+    linear-gradient(336deg, rgba(28, 116, 116, 0.8), rgba(0,0,255,0) 70.71%);
 } 
 
 @media (min-width:800px){
@@ -38,6 +41,7 @@ section {
     width: 100%;
     height: 100vh;
     text-shadow: rgb(0, 0, 0) 3px 3px 3px;
+    position: relative;
 }
 
 .game {
@@ -45,9 +49,14 @@ section {
     width: 90%;
     height: fit-content;
     margin: 2em auto;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+    transition: 500ms ease-in-out;
+}
+
+.opacity {
+    opacity: 0.05;
 }
 
 .roundCounter {
@@ -162,6 +171,186 @@ section {
     font-weight: bold;
 }
 
+.startDiv {
+    max-width: 100vh;
+    width: 90%;
+    min-height: 28em;
+    height: fit-content;
+    margin: 2em auto;
+    padding: .25em;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--clr-light);
+    position: relative;
+    transition: 500ms ease-in-out;
+    display: flex;
+
+}
+
+.startDiv .imageContainer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.startDiv h1 {
+    font-size: var(--fs-h1);
+    margin: 1em;
+}
+.startDiv .textDiv {
+    width: 100%;
+    min-height: 100px;
+    height: fit-content;
+    position: relative;
+}
+
+.startDiv .textDiv .textDiv_1 {
+    width: 50%;
+    min-height: 100px;
+    height: fit-content;
+    text-align: left;
+    padding: .5em;
+}
+
+.startDiv .textDiv .textDiv_2 {
+    width: 50%;
+    min-height: 100px;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+}
+
+.startDiv button {
+    max-width: 300px;
+    width: 90%;
+    margin: 0 auto;
+    height: 30px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-img);
+    color: white;
+    font-size: 1.25em;
+    border-radius: 5px;
+    border: 2px white solid;
+    cursor: pointer;
+    box-shadow: 1.25em 1.25em 1.75em rgba(0,0,0,.25),
+    1.125em 1.125em 1.25em rgba(0,0,0,.15);;
+    transition: ease-in-out 0.25s;
+}
+
+.startDiv button:hover {
+    transform: scale(1.05);
+}
+
+#intro_header, #intro_header_2 {
+    font-size: 1.5em;
+}
+
+.gameOverSec {
+    max-width: 500px;
+    width: 90%;
+    min-height: 100px;
+    height: fit-content;
+    margin: 1.5em auto;
+    color: var(--clr-light);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.gameOverSec h1 {
+    padding: .5em;
+    font-size: 1.8em;
+}
+
+.gameOverSec .finalScore {
+    display: flex;
+    font-size: 3.5em;
+    justify-content: space-evenly;
+    width:150px ;
+    font-weight: bolder;
+}
+
+.gameOverSec #playAgain, #home{
+    width: 225px;
+    height: fit-content;
+    background: var(--bg-img);
+    color: white;
+    font-size: 1.25em;
+    border-radius: 5px;
+    border: 2px white solid;
+    cursor: pointer;
+    box-shadow: 1.25em 1.25em 1.75em rgba(0,0,0,.25),
+    1.125em 1.125em 1.25em rgba(0,0,0,.15);;
+    transition: ease-in-out 0.25s;
+    padding: 5px;
+    margin: .5em;
+}
+
+.gameOverSec #playAgain:hover, #home:hover {
+    transform: scale(1.05);
+}
+
+.gameOverSec .sociaMediaButtons{
+    margin: 1.5em;
+}
+
+.gameOverSec .sociaMediaButtons button {
+    width: 95px;
+    border: none;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+    transition: ease-in-out 250ms;
+}
+
+.gameOverSec .sociaMediaButtons button:hover {
+    transform: scale(1.05);
+}
+
+.gameOverSec .sociaMediaButtons #linkedin {
+    background: rgb(58, 58, 238);
+}
+
+.gameOverSec .sociaMediaButtons #twitter {
+    background: rgb(58, 142, 238);
+}
+.gameOverSec .sociaMediaButtons button {
+    color: white;
+}
+.gameOverSec .sociaMediaButtons button a {
+    text-decoration: none;
+    color: white;
+    margin: 0 2px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width:600px){
+    .startDiv .textDiv .textDiv_1{
+        width: 80%;
+    }
+
+    .startDiv .textDiv .textDiv_2{
+        width: 80%;
+    }
+}
+
+
 @media (max-width:400px){
     .game {
         width: 90%;
@@ -178,6 +367,10 @@ section {
 
     .buttonSection .button, .computerChoice {
         margin-top: 0;
+    }
+
+    #intro_header, #intro_header_2 {
+        font-size: 1.35em;
     }
     
 }
