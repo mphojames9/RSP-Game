@@ -22,6 +22,9 @@ const gameOverSec = document.querySelector(".gameOverSec");
 const winnerSec = document.querySelector("#gameResults");
 const playAgainBtn = document.querySelector("#playAgain");
 const homeBtn = document.querySelector("#home");
+const selectionText = document.querySelector(".selectionText"); 
+
+console.log(selectionText)
 
 startBtn.addEventListener("click",()=>{
     mainGame.style.display = "flex";
@@ -108,16 +111,17 @@ function tie(){
 function displayElements(){
     results.style.display  = 'block';
     function test(){
-        results.style.display = "none"
+        results.style.display = "none";
     }
+
     function restoreBackImg(){
     rockBtn.style="background-image: (img/rock.png)";
     paperBtn.style="background-image: (img/paper.png)";
     sissorBtn.style="background-image: (img/sissor.png)";
     computerChoice_backGround.style="background-image: url(img/loading.gif)";
     }
-    setTimeout(test,1500);
-    setTimeout(restoreBackImg,1500);
+    setTimeout(test,2000);
+    setTimeout(restoreBackImg,2000);
 }
 
 function scoreUpdate(){

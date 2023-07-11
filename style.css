@@ -52,7 +52,6 @@ section {
     display: none;
     flex-direction: column;
     align-items: center;
-    transition: 500ms ease-in-out;
 }
 
 .opacity {
@@ -155,6 +154,16 @@ section {
     border-bottom-left-radius: 60%;
     border-bottom-right-radius: 60%;
 
+}
+
+.winGlow {
+    border-bottom: 5px rgba(47, 209, 47, 0.788) solid;
+    color: rgba(47, 209, 47, 0.795) solid;
+}
+
+.lossGlow {
+    border-bottom: 5px rgba(250, 0, 0, 0.767) solid;
+    color: rgba(255, 0, 0, 0.76);
 }
 
 .selectionText p {
