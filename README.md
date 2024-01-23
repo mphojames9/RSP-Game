@@ -24,4 +24,4 @@ Improved my understanding of JavaScript functions (organization, workspaces, sco
 # Summary
 For a more playful experience, theme was changed to 'Fantasy' and name was changed to 'Wand Bow Mace'.
 The game has a responsive layout with one breakpoint.
-The game is fully playable in the browser window
+The game is fully playable in the browser windows 
