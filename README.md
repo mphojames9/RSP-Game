@@ -1,4 +1,4 @@
-# RSP-Game. The Odin Project Web Development.
+# RSP-Game. The Odin Project Web Development
 
 Project: Rock Paper Scissors
 Implementation of Rock Paper Scissors game from The Odin Project curriculum.
